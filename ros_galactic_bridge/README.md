@@ -31,7 +31,7 @@ ROS_LOCALHOST_ONLY=1 ros2 run demo_nodes_cpp talker
 ROS_LOCALHOST_ONLY=1 ros2 run turtlesim turtlesim_node
 ```
 
-* 2nd container: RUn ROS node
+* 2nd container: Run ROS node
 
 ```shell
 # Use tmux

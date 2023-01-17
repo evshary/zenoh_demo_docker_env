@@ -27,7 +27,7 @@ The docker environment shows how to control two Autowares with zenoh-bridge-dds.
 # Run Autoware
 ./autoware.sh
 # Run bridge with scope "v1"
-./zenoh-bridge-dds -c myconfig.json --dds-localhost-only -s "v1"
+./zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v1"
 ```
 
 * 2nd container: Run Autoware
@@ -38,7 +38,7 @@ The docker environment shows how to control two Autowares with zenoh-bridge-dds.
 # Run Autoware
 ./autoware.sh
 # Run bridge with scope "v2"
-./zenoh-bridge-dds -c myconfig.json --dds-localhost-only -s "v2"
+./zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v2"
 ```
 
 * Control from outside
