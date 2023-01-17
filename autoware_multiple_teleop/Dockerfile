@@ -1,0 +1,19 @@
+FROM ghcr.io/autowarefoundation/autoware-universe:galactic-20221115-prebuilt-amd64
+
+# Download necessary packages
+RUN apt-get update 
+RUN apt-get install -y wget unzip tmux inetutils-ping
+RUN python3 -m pip install gdown
+
+# Env
+WORKDIR /root/
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+# Install zenoh-bride-dds
+RUN wget https://github.com/eclipse-zenoh/zenoh-plugin-dds/releases/download/0.7.0-rc/zenoh-bridge-dds-0.7.0-rc-x86_64-unknown-linux-gnu.zip
+RUN unzip zenoh-bridge-dds-0.7.0-rc-x86_64-unknown-linux-gnu.zip
+# Install Autoware map
+RUN gdown -O ~/autoware_map/ 'https://docs.google.com/uc?export=download&id=1499_nsbUbIeturZaDj7jhUownh5fvXHd'
+RUN unzip -d ~/autoware_map ~/autoware_map/sample-map-planning.zip
+
+CMD bash
