@@ -9,8 +9,8 @@ services:
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
     volumes:
-      - $PWD/autoware.sh:/root/autoware.sh
-      - $PWD/myconfig.json5:/root/myconfig.json5
+      - ./autoware.sh:/root/autoware.sh
+      - ./myconfig.json5:/root/myconfig.json5
       - /tmp/.X11-unix:/tmp/.X11-unix
     privileged: true
     command: /root/autoware.sh
@@ -23,8 +23,8 @@ services:
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
     volumes:
-      - $PWD/autoware.sh:/root/autoware.sh
-      - $PWD/myconfig.json5:/root/myconfig.json5
+      - ./autoware.sh:/root/autoware.sh
+      - ./myconfig.json5:/root/myconfig.json5
       - /tmp/.X11-unix:/tmp/.X11-unix
     privileged: true
     command: /root/autoware.sh

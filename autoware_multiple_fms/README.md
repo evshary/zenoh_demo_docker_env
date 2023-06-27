@@ -34,6 +34,7 @@ sudo apt-get install docker-compose-plugin
 * Run docker-compose
 
 ```shell
+xhost +
 docker compose up
 ```
 
