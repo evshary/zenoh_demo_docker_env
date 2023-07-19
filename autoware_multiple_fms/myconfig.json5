@@ -9,7 +9,11 @@
               "/control/current_gate_mode",
               "/api/autoware/get/engage",
               "/vehicle/status/velocity_status",
-              "/vehicle/status/gear_status"],
+              "/vehicle/status/gear_status",
+              "/api/external/get/vehicle/status",
+              "/api/external/set/command/remote/shift",
+              "/api/external/set/command/remote/turn_signal",
+              "/api/external/get/cpu_usage"],
     },
   },
 }
