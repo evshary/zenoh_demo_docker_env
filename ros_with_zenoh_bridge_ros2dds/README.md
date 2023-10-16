@@ -1,13 +1,14 @@
-# ROS 2 Humble with zenoh-bridge-ros2dds
+# ROS 2 with zenoh-bridge-ros2dds
 
 The docker environment shows how to connect ROS nodes in different containers with zenoh-bridge-ros2dds.
 
 # Steps
 
-* Installation
+* Set the version of ROS and Zenoh
 
 ```shell
-./build.sh
+# Use ROS humble with zenoh 0.10.0
+source env/env_humble_0.10.0.sh
 ```
 
 * Run two containers in separated terminals
