@@ -11,13 +11,15 @@ The docker environment shows how to control two Autowares with zenoh-bridge-dds.
 source env/env_galactic_0.7.2.sh
 ```
 
-* Run two containers in separated terminals
+* Run containers in separated terminals
 
 ```shell
 # 1st container
-./run.sh
+./run_autoware.sh
 # 2nd container
-./run.sh
+./run_autoware.sh
+# 3rd container
+./run_teleop.sh
 ```
 
 * 1st container: Run Autoware
@@ -42,14 +44,10 @@ source env/env_galactic_0.7.2.sh
 ./zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v2"
 ```
 
-* Control from outside
+* 3rd container: Run autoware_manual_control
 
 ```shell
-# Need RUST installed
-git clone https://github.com/evshary/autoware_manual_control_rs.git
-cd autoware_manual_control_rs
-cargo build --release
-# Run
+# Run manual controller
 ./target/release/autoware_manual_control -s "*"
 ```
 
