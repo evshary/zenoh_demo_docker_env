@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker rmi galactic-bridge-dds
+docker rmi ${ROS_VERSION}-with-bridge-dds-${ZENOH_VERSION}
 

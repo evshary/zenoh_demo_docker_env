@@ -1,5 +1,13 @@
 #!/bin/bash
 
+DOCKER_IMAGE=${ROS_VERSION}-with-bridge-dds-${ZENOH_VERSION}
+DOCKER_FILE=docker/Dockerfile_${ROS_VERSION}_${ZENOH_VERSION}
+
+if [ ! "$(docker images -q ${DOCKER_IMAGE})" ]; then
+    echo "${DOCKER_IMAGE} does not exist. Creating..."
+    docker build -f ${DOCKER_FILE} -t ${DOCKER_IMAGE} .
+fi
+
 xhost +
 docker run --rm -it \
            --env "ROS_LOCALHOST_ONLY=1" \
@@ -7,5 +15,4 @@ docker run --rm -it \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            --env="QT_X11_NO_MITSHM=1" \
            --env "DISPLAY=$DISPLAY" \
-           galactic-bridge-dds bash
-
+           ${DOCKER_IMAGE} bash

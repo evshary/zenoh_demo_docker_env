@@ -1,13 +1,16 @@
-# ROS 2 galactic with zenoh bridge
+# ROS 2 with zenoh-bridge-dds
 
 The docker environment shows how to connect ROS nodes in different containers with zenoh-bridge-dds.
 
 # Steps
 
-* Installation
+* Set the version of ROS and Zenoh
 
 ```shell
-./build.sh
+# Use ROS galactic with zenoh 0.7.0
+source env/env_galactic_0.7.0.sh
+# Use ROS galactic with zenoh 0.10.0
+source env/env_galactic_0.10.0.sh
 ```
 
 * Run two containers in separated terminals
