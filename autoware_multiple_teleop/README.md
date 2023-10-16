@@ -4,10 +4,11 @@ The docker environment shows how to control two Autowares with zenoh-bridge-dds.
 
 # Steps
 
-* Installation
+* Set the version of Autoware and Zenoh
 
 ```shell
-./build.sh
+# Use Autoware galactic with zenoh 0.7.2
+source env/env_galactic_0.7.2.sh
 ```
 
 * Run two containers in separated terminals
