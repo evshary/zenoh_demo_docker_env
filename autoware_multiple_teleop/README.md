@@ -9,6 +9,8 @@ The docker environment shows how to control two Autowares with zenoh-bridge-dds.
 ```shell
 # Use Autoware galactic with zenoh 0.7.2
 source env/env_galactic_0.7.2.sh
+# Use Autoware galactic with zenoh 0.10.0
+source env/env_galactic_0.10.0.sh
 ```
 
 * Run containers in separated terminals
@@ -30,7 +32,7 @@ source env/env_galactic_0.7.2.sh
 # Run Autoware
 ./autoware.sh
 # Run bridge with scope "v1"
-./zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v1"
+../zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v1"
 ```
 
 * 2nd container: Run Autoware
@@ -41,7 +43,7 @@ source env/env_galactic_0.7.2.sh
 # Run Autoware
 ./autoware.sh
 # Run bridge with scope "v2"
-./zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v2"
+../zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v2"
 ```
 
 * 3rd container: Run autoware_manual_control
