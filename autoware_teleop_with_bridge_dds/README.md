@@ -50,6 +50,9 @@ source env/env_galactic_0.10.0.sh
 
 ```shell
 # Run manual controller
+# For above 0.10.0
+./target/release/autoware_manual_control -n "*" -m dds
+# For 0.7.2
 ./target/release/autoware_manual_control -s "*"
 ```
 
