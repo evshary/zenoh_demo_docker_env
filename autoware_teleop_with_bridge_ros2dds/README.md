@@ -43,14 +43,14 @@ source env/env_galactic_0.10.0.sh
 # Run Autoware
 ./autoware.sh
 # Run bridge with scope "v2"
-../zenoh-bridge-dds -c myconfig.json5 --dds-localhost-only -s "v2"
+../zenoh-plugin-ros2dds/target/release/zenoh-bridge-ros2dds -c myconfig.json5 --ros-localhost-only -n /v2
 ```
 
 * 3rd container: Run autoware_manual_control
 
 ```shell
 # Run manual controller
-./target/release/autoware_manual_control -s "*"
+./target/release/autoware_manual_control -p "*" -m ros2
 ```
 
 * Clean environment
