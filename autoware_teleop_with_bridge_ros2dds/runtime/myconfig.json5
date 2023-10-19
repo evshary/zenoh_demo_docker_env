@@ -1,6 +1,6 @@
-{                                                                                  
-  plugins: {                                                                       
-    ros2dds: {                                                                         
+{
+  plugins: {
+    ros2dds: {
       allow: {
         publishers: ["/external/selected/control_cmd",
                     "/external/selected/gear_cmd",
@@ -23,6 +23,6 @@
         action_servers: ["/abc"],
         action_clients: ["/abc"],
       }
-    }                                                                              
-  }                                                                                
+    }
+  }
 }
