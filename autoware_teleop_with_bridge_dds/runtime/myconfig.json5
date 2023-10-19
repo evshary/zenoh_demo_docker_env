@@ -1,6 +1,6 @@
-{                                                                                  
-  plugins: {                                                                       
-    dds: {                                                                         
+{
+  plugins: {
+    dds: {
       allow: ["/external/selected/control_cmd",
               "/external/selected/gear_cmd",
               "/control/gate_mode_cmd",
@@ -9,6 +9,6 @@
               "/api/autoware/get/engage",
               "/vehicle/status/velocity_status",
               "/vehicle/status/gear_status"]
-    }                                                                              
-  }                                                                                
+    }
+  }
 }
