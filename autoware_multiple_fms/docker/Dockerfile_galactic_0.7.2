@@ -16,4 +16,7 @@ RUN unzip zenoh-bridge-dds-0.7.2-rc-x86_64-unknown-linux-gnu.zip
 RUN gdown -O ~/autoware_map/ 'https://docs.google.com/uc?export=download&id=1499_nsbUbIeturZaDj7jhUownh5fvXHd'
 RUN unzip -d ~/autoware_map ~/autoware_map/sample-map-planning.zip
 
+# Set workspace folder
+WORKDIR runtime
+
 CMD bash

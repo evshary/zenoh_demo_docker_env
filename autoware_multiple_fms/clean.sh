@@ -1,4 +1,3 @@
 #!/bin/bash
 
-docker rmi autoware-zenoh-bridge
-
+docker rmi ${DOCKER_IMAGE}

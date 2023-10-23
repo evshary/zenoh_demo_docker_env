@@ -1,4 +1,3 @@
 #!/bin/bash
 
-docker build -t autoware-zenoh-bridge .
-
+docker build -f ${DOCKER_FILE} -t ${DOCKER_IMAGE} .
