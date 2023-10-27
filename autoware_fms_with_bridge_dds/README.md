@@ -25,10 +25,12 @@ sudo apt-get install docker-compose-plugin
 * Set the version of Autoware and Zenoh
 
 ```shell
-# Use Autoware galactic with zenoh 0.7.2
-source env/env_galactic_0.7.2.sh
+# Use Autoware humble with zenoh 0.10.0
+source env/env_humble_0.10.0.sh
 # Use Autoware galactic with zenoh 0.10.0
 source env/env_galactic_0.10.0.sh
+# Use Autoware galactic with zenoh 0.7.2
+source env/env_galactic_0.7.2.sh
 ```
 
 * Build docker images
