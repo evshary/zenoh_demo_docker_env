@@ -8,7 +8,10 @@
             "/control/command/gear_cmd",
             "/control/current_gate_mode",
             "/control/command/turn_indicators_cmd",
-            "/control/command/hazard_lights_cmd"
+            "/control/command/hazard_lights_cmd",
+            // TODO: need to check the publisher & subscriber again.
+            "/api/external/get/cpu_usage",
+            "/api/external/get/vehicle/status",
         ],
         subscribers: [
             // Receive from bridge
