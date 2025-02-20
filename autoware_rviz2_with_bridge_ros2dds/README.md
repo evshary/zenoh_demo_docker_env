@@ -12,6 +12,14 @@ The tutorial shows how to bridge Autoware and rviz2 cross Internet with the help
 
 ## Tutorial
 
+* Go inside the container on both hosts
+
+```shell
+./run_container.sh
+source /opt/autoware/setup.zsh
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
+
 * (Host 1) Run the zenoh-bridge-ros2dds
 
 ```shell
