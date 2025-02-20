@@ -8,7 +8,7 @@ The tutorial shows how to bridge Autoware and rviz2 cross Internet with the help
 
 ## Demo video
 
-![Demo video](https://www.youtube.com/watch?v=2uKWHR6OhBA)
+[![Demo video](https://img.youtube.com/vi/2uKWHR6OhBA/maxresdefault.jpg)](https://youtu.be/2uKWHR6OhBA)
 
 ## Tutorial
 
