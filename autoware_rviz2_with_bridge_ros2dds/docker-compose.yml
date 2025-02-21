@@ -1,0 +1,16 @@
+version: '3'
+services:
+  bridge:
+    image: eclipse/zenoh-bridge-ros2dds:latest
+    environment:
+      - ROS_DISTRO=humble
+    network_mode: "host"
+    #ports:
+    #  - "7447:7447"
+    volumes:
+      - ./config:/config
+    command:
+      # Sender
+      #- -e tcp/<IP>:7447 -c /config/zenoh-bridge-ros2dds.json5
+      # Receiver
+      - -c /config/zenoh-bridge-ros2dds.json5
