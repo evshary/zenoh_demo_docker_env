@@ -12,41 +12,20 @@ The tutorial shows how to bridge Autoware and rviz2 cross Internet with the help
 
 ## Tutorial
 
-* (Host 1) Run the zenoh-bridge-ros2dds
+* (Host 1) Run the Autoware and zenoh-bridge-ros2dds
 
 ```shell
-# Update docker-compose.yml
-docker compose up
+# Assign the other side IP
+export VISUALIZE_IP=192.168.x.y
+# Run Autoware
+docker compose -f ./docker-compose-autoware.yml up
 ```
 
-* (Host 2) Run another zenoh-bridge-ros2dds
+* (Host 2) Run rviz2 and another zenoh-bridge-ros2dds
 
 ```shell
-# Update docker-compose.yml
-docker compose up
+xhost +local:
+docker compose -f ./docker-compose-rviz.yml up
 ```
 
-* (Host 2) Run Autoware without rviz2
-
-```shell
-# Go inside the container
-./run_container.sh
-# Setup environment
-source /opt/autoware/setup.zsh
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-# Run command
-ros2 launch autoware_launch planning_simulator.launch.xml map_path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit rviz:=false
-```
-
-* (Host 1) Run rviz2
-  * Note that it might take some time depends on the connection quality.
-
-```shell
-# Go inside the container
-./run_container.sh
-# Setup environment
-source /opt/autoware/setup.zsh
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-# Run command
-rviz2 -d /opt/autoware/share/autoware_launch/rviz/autoware.rviz
-```
+* It might need some time to initialize depending on the network quality
