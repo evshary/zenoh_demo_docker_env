@@ -1,0 +1,25 @@
+version: '3'
+services:
+  bridge:
+    image: eclipse/zenoh-bridge-ros2dds:latest
+    environment:
+      - ROS_DISTRO=humble
+    network_mode: "host"
+    #ports:
+    #  - "7447:7447"
+    volumes:
+      - ./config:/config
+    command:
+      - -c /config/zenoh-bridge-ros2dds.json5
+
+  rviz:
+    image: ghcr.io/autowarefoundation/autoware:universe-devel-20250131-amd64
+    privileged: true
+    environment:
+      - QT_X11_NO_MITSHM=1
+      - DISPLAY=$DISPLAY
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: "host"
+    command: rviz2 -d /opt/autoware/share/autoware_launch/rviz/autoware.rviz
