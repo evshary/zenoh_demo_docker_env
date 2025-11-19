@@ -1,4 +1,4 @@
-FROM ghcr.io/autowarefoundation/autoware:universe-devel-20250131-amd64
+FROM ghcr.io/autowarefoundation/autoware:universe-devel-20251118-amd64
 
 # For just
 RUN wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
