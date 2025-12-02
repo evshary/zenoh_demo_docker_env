@@ -12,6 +12,8 @@ The script setups several Autoware with zenoh-bridge-ros2dds for FMS test enviro
 just build
 ```
 
+* Run [the FMS environment](https://github.com/evshary/zenoh_autoware_fms)
+
 ### Run manually
 
 * Go inside the docker container and the first Autoware
