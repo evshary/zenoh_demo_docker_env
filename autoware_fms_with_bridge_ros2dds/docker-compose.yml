@@ -1,26 +1,25 @@
-version: '3'
 services:
   autoware1:
-    image: $DOCKER_IMAGE
+    image: autoware_fms_zenoh_bridge_image
     environment:
-      - VEHICLE_NAME=v1
-      - FMS_CONNECTION=tcp/127.0.0.1:7447
       - ROS_LOCALHOST_ONLY=1
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
+      - VEHICLE_NAME=v1
+      - FMS_CONNECTION=tcp/172.17.0.1:7887
     volumes:
       - ./runtime:/root/runtime
       - /tmp/.X11-unix:/tmp/.X11-unix
     privileged: true
     command: ./autoware.sh
   autoware2:
-    image: $DOCKER_IMAGE
+    image: autoware_fms_zenoh_bridge_image
     environment:
-      - VEHICLE_NAME=v2
-      - FMS_CONNECTION=tcp/127.0.0.1:7447
       - ROS_LOCALHOST_ONLY=1
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
+      - VEHICLE_NAME=v2
+      - FMS_CONNECTION=tcp/172.17.0.1:7887
     volumes:
       - ./runtime:/root/runtime
       - /tmp/.X11-unix:/tmp/.X11-unix

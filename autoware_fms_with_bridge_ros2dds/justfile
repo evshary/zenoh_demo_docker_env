@@ -1,0 +1,14 @@
+build:
+    docker build -f Dockerfile -t autoware_fms_zenoh_bridge_image .
+
+run:
+    xhost +
+    docker run --rm -it --privileged \
+        --env "ROS_LOCALHOST_ONLY=1" -v $PWD/runtime:/root/runtime \
+        -v /tmp/.X11-unix:/tmp/.X11-unix --env="QT_X11_NO_MITSHM=1" --env "DISPLAY=$DISPLAY" \
+        -e VEHICLE_NAME=v1 -e FMS_CONNECTION=tcp/172.17.0.1:7887 \
+        autoware_fms_zenoh_bridge_image bash
+
+clean:
+    docker rmi autoware_fms_zenoh_bridge_image
+ 

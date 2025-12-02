@@ -2,41 +2,36 @@
 
 The script setups several Autoware with zenoh-bridge-ros2dds for FMS test environment.
 
-# Steps
+## Steps
 
-* Install docker compose first: from [official guide](https://docs.docker.com/compose/install/linux/#install-using-the-repository)
-
-```shell
-# Install dependencies
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-
-# Install packages
-sudo apt-get install docker-compose-plugin
-```
-
-* Set the version of Autoware and Zenoh
-
-```shell
-# Use Autoware humble with zenoh 0.10.0
-source env/env_humble_0.10.0.sh
-```
+* Install [docker compose](https://docs.docker.com/compose/install/linux/#install-using-the-repository) and [just](https://github.com/casey/just?tab=readme-ov-file#installation)
 
 * Build docker images
 
 ```shell
-./build.sh
+just build
 ```
 
+### Run manually
+
+* Go inside the docker container and the first Autoware
+
+```shell
+just run
+VEHICLE_NAME=v1 FMS_CONNECTION=tcp/172.17.0.1:7887 ./autoware.sh
+```
+
+* Create another container and run the second one
+
+```shell
+just run
+VEHICLE_NAME=v2 FMS_CONNECTION=tcp/172.17.0.1:7887 ./autoware.sh
+```
+
+### Docker Compose (Not work for the time being)
+
 * Modify the `docker-compose.yaml` for your requirement
-  - For example, `VEHICLE_NAME` or `FMS_CONNECTION`
+  * For example, `VEHICLE_NAME` or `FMS_CONNECTION`
 
 * Run docker-compose
 
@@ -45,7 +40,7 @@ xhost +
 docker compose up
 ```
 
-* Run FMS: https://github.com/evshary/zenoh_autoware_fms
+* Follow [the tutoiral](https://github.com/evshary/zenoh_autoware_fms) to run FMS
 
 * Stop docker-compose
 
@@ -56,12 +51,5 @@ docker compose down
 * Clean environment
 
 ```shell
-./clean.sh
+just clean
 ```
-
-* Debug (Go inside the docker container)
-
-```shell
-./run.sh
-```
-
