@@ -3,6 +3,7 @@ services:
     image: autoware_fms_zenoh_bridge_image
     environment:
       - ROS_LOCALHOST_ONLY=1
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
       - VEHICLE_NAME=v1
@@ -16,6 +17,7 @@ services:
     image: autoware_fms_zenoh_bridge_image
     environment:
       - ROS_LOCALHOST_ONLY=1
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
       - VEHICLE_NAME=v2

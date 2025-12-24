@@ -30,7 +30,7 @@ just run
 VEHICLE_NAME=v2 FMS_CONNECTION=tcp/172.17.0.1:7887 ./autoware.sh
 ```
 
-### Docker Compose (Not work for the time being)
+### Docker Compose
 
 * Modify the `docker-compose.yaml` for your requirement
   * For example, `VEHICLE_NAME` or `FMS_CONNECTION`
